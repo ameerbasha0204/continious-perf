@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="MoneyView" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group 1" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">2</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">25</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="getOffers" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;userDetailsInfo&quot;: {&#xd;
+        &quot;gpsRejectCode&quot;: -1,&#xd;
+        &quot;kycPinCode&quot;: &quot;560016&quot;,&#xd;
+        &quot;appVersion&quot;: 328,&#xd;
+        &quot;gender&quot;: &quot;M&quot;,&#xd;
+        &quot;pkgInfo&quot;: &quot;&quot;,&#xd;
+        &quot;emailId&quot;: &quot;prasad26gopal@gmail.com&quot;,&#xd;
+        &quot;userSecretId&quot;: &quot;8a8181ab7588dc74017588f2cd000001&quot;,&#xd;
+        &quot;bankName&quot;: &quot;SBI Group&quot;,&#xd;
+        &quot;gpsIsVerifiedOnPartner&quot;: 0,&#xd;
+        &quot;netbankingEnabled&quot;: true,&#xd;
+        &quot;kycAddress&quot;: null,&#xd;
+        &quot;nsdlName&quot;: &quot;GOPAL   PRASAD&quot;,&#xd;
+        &quot;userIdRef&quot;: &quot;8a8181ab7588dc74017588f2cc450000&quot;,&#xd;
+        &quot;isCurrentCustomer&quot;: false,&#xd;
+        &quot;skipGps&quot;: false,&#xd;
+        &quot;educationLevel&quot;: &quot;Graduate&quot;,&#xd;
+        &quot;addressVerificationConfidence&quot;: 0.0,&#xd;
+        &quot;paynimoName&quot;: null,&#xd;
+        &quot;submittedItr&quot;: -1,&#xd;
+        &quot;isPastCustomer&quot;: false,&#xd;
+        &quot;activeLoansCount&quot;: -1,&#xd;
+        &quot;panNo&quot;: &quot;ITSPS8875Q&quot;,&#xd;
+        &quot;kycAddressTier&quot;: 3,&#xd;
+        &quot;currentAddressLocation&quot;: null,&#xd;
+        &quot;gpsManualOverride&quot;: false,&#xd;
+        &quot;isAddressValid&quot;: true,&#xd;
+        &quot;kycName&quot;: null,&#xd;
+        &quot;phoneNumber&quot;: &quot;+917204977026&quot;,&#xd;
+        &quot;dob&quot;: 656533800000,&#xd;
+        &quot;name&quot;: &quot;GOPAL PRASAD&quot;&#xd;
+    },&#xd;
+    &quot;preApprovedOfferInfo&quot;: null,&#xd;
+    &quot;callerApiName&quot;: &quot;checkEligibilityInternal&quot;,&#xd;
+    &quot;chainInfo&quot;: {&#xd;
+        &quot;chainName&quot;: null,&#xd;
+        &quot;productId&quot;: null,&#xd;
+        &quot;scheme&quot;: null,&#xd;
+        &quot;maxInterestRateCeil&quot;: null,&#xd;
+        &quot;procChargeCeil&quot;: null,&#xd;
+        &quot;minLoanAmountFloor&quot;: null,&#xd;
+        &quot;program&quot;: null,&#xd;
+        &quot;honourCategory&quot;: false,&#xd;
+        &quot;partner&quot;: 0,&#xd;
+        &quot;maxLoanAmountCeil&quot;: null,&#xd;
+        &quot;minInterestRateFloor&quot;: null,&#xd;
+        &quot;maxLoanTenureCeil&quot;: null,&#xd;
+        &quot;minLoanTenureFloor&quot;: null&#xd;
+    },&#xd;
+    &quot;employmentInfo&quot;: {&#xd;
+        &quot;businessActivity&quot;: null,&#xd;
+        &quot;employmentVerificationMode&quot;: &quot;NA&quot;,&#xd;
+        &quot;employmentType&quot;: &quot;Salaried&quot;,&#xd;
+        &quot;companyStatus&quot;: null,&#xd;
+        &quot;employerName&quot;: &quot;Moneyview&quot;,&#xd;
+        &quot;employmentVerifiedStatus&quot;: &quot;REQUIRED&quot;,&#xd;
+        &quot;uanNo&quot;: null,&#xd;
+        &quot;employerCategory&quot;: &quot;DEFAULT&quot;,&#xd;
+        &quot;incomeMode&quot;: &quot;Online&quot;&#xd;
+    },&#xd;
+    &quot;currentLoanDTO&quot;: null,&#xd;
+    &quot;repeatUserDTO&quot;: null,&#xd;
+    &quot;loanApplicationInfo&quot;: {&#xd;
+        &quot;lineRevisionType&quot;: &quot;SYSTEM&quot;,&#xd;
+        &quot;creditGraduationApplied&quot;: false,&#xd;
+        &quot;userDataReviewStatus&quot;: &quot;REQ_CREDIT_CHECK&quot;,&#xd;
+        &quot;isMarketing&quot;: false,&#xd;
+        &quot;vehicleAmount&quot;: null,&#xd;
+        &quot;userSegment&quot;: &quot;NO_DATA&quot;,&#xd;
+        &quot;vehicleRegType&quot;: null,&#xd;
+        &quot;isCreditGraduation&quot;: false,&#xd;
+        &quot;applicationStatus&quot;: &quot;CREDIT_CHECK_MANUAL&quot;,&#xd;
+        &quot;isIncomeVerifiedForRiskyTopup&quot;: false,&#xd;
+        &quot;purchaseProcessingFee&quot;: 0.0,&#xd;
+        &quot;loanApplicationId&quot;: &quot;income88model160620615243&quot;,&#xd;
+        &quot;creditGraduationType&quot;: &quot;BANK_STATEMENT&quot;,&#xd;
+        &quot;isLineTransfer&quot;: false,&#xd;
+        &quot;appliedEmi&quot;: 0.0,&#xd;
+        &quot;voucherFlow&quot;: false,&#xd;
+        &quot;loanApplicationNumber&quot;: &quot;184406380560&quot;,&#xd;
+        &quot;appliedRoi&quot;: 0.0,&#xd;
+        &quot;leadId&quot;: null,&#xd;
+        &quot;moratoriumOpted&quot;: false,&#xd;
+        &quot;appName&quot;: &quot;com.whizdm.moneyview.loans&quot;,&#xd;
+        &quot;purchaseSubventionAmount&quot;: 0.0,&#xd;
+        &quot;leadSource&quot;: null,&#xd;
+        &quot;rawProcessingFee&quot;: 0.0,&#xd;
+        &quot;isPerfiosSuccess&quot;: false,&#xd;
+        &quot;lowGrowApplied&quot;: false,&#xd;
+        &quot;isTopupRiskyCustomer&quot;: false,&#xd;
+        &quot;submissionDate&quot;: null,&#xd;
+        &quot;appliedAmount&quot;: 0.0,&#xd;
+        &quot;moratoriumList&quot;: [],&#xd;
+        &quot;loanAmount&quot;: 0.0,&#xd;
+        &quot;perfiosAccountNumber&quot;: null,&#xd;
+        &quot;isTopupBSUploadFlow&quot;: false,&#xd;
+        &quot;isPurchaseLoan&quot;: false,&#xd;
+        &quot;loanTenure&quot;: 0,&#xd;
+        &quot;channelName&quot;: &quot;MVL_APP&quot;&#xd;
+    },&#xd;
+    &quot;cashFlowInfo&quot;: {&#xd;
+        &quot;income&quot;: null,&#xd;
+        &quot;manualIncomeVerification&quot;: false,&#xd;
+        &quot;obligationsToDeduct&quot;: null,&#xd;
+        &quot;latePaymentExists&quot;: true,&#xd;
+        &quot;declaredIncome&quot;: &quot;21000&quot;,&#xd;
+        &quot;obligations&quot;: -1.0,&#xd;
+        &quot;opsCalculatedIncome&quot;: 0.0&#xd;
+    },&#xd;
+    &quot;fraudDetailsInfo&quot;: {&#xd;
+        &quot;duplicatePhoneNumber&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;currPermAddrMatch&quot;: false,&#xd;
+        &quot;dedupPartner&quot;: 0,&#xd;
+        &quot;duplicateDevice&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;riskyProfileTags&quot;: &quot;&quot;,&#xd;
+        &quot;bankAccountMatch&quot;: false,&#xd;
+        &quot;clixDecisionDto&quot;: {&#xd;
+            &quot;reason&quot;: &quot;CLIX APPLICATION NOT FOUND&quot;,&#xd;
+            &quot;status&quot;: &quot;APPROVED&quot;&#xd;
+        },&#xd;
+        &quot;abflpincodeValid&quot;: true,&#xd;
+        &quot;dedup&quot;: &quot;FAILED&quot;,&#xd;
+        &quot;negativeTagDetails&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;ficclLeadAge&quot;: 0,&#xd;
+        &quot;clixBlacklistedPincode&quot;: false,&#xd;
+        &quot;duplicatePan&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;cleanTrackRecordForPC&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;clixOneLakhPlusLoanAllowed&quot;: false,&#xd;
+        &quot;whitelistedPincode&quot;: &quot;FOUND&quot;,&#xd;
+        &quot;negativeEmployerTags&quot;: &quot;&quot;,&#xd;
+        &quot;dmiRejectReason&quot;: null,&#xd;
+        &quot;ekycStatus&quot;: null&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">dev-services.whizdm.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/unnati/getOffers</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group 2" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">2</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">25</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="getOffers" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;userDetailsInfo&quot;: {&#xd;
+        &quot;gpsRejectCode&quot;: -1,&#xd;
+        &quot;kycPinCode&quot;: &quot;560016&quot;,&#xd;
+        &quot;appVersion&quot;: 328,&#xd;
+        &quot;gender&quot;: &quot;M&quot;,&#xd;
+        &quot;pkgInfo&quot;: &quot;&quot;,&#xd;
+        &quot;emailId&quot;: &quot;prasad26gopal@gmail.com&quot;,&#xd;
+        &quot;userSecretId&quot;: &quot;8a8181ab7588dc74017588f2cd000001&quot;,&#xd;
+        &quot;bankName&quot;: &quot;SBI Group&quot;,&#xd;
+        &quot;gpsIsVerifiedOnPartner&quot;: 0,&#xd;
+        &quot;netbankingEnabled&quot;: true,&#xd;
+        &quot;kycAddress&quot;: null,&#xd;
+        &quot;nsdlName&quot;: &quot;GOPAL   PRASAD&quot;,&#xd;
+        &quot;userIdRef&quot;: &quot;8a8181ab7588dc74017588f2cc450000&quot;,&#xd;
+        &quot;isCurrentCustomer&quot;: false,&#xd;
+        &quot;skipGps&quot;: false,&#xd;
+        &quot;educationLevel&quot;: &quot;Graduate&quot;,&#xd;
+        &quot;addressVerificationConfidence&quot;: 0.0,&#xd;
+        &quot;paynimoName&quot;: null,&#xd;
+        &quot;submittedItr&quot;: -1,&#xd;
+        &quot;isPastCustomer&quot;: false,&#xd;
+        &quot;activeLoansCount&quot;: -1,&#xd;
+        &quot;panNo&quot;: &quot;ITSPS8875Q&quot;,&#xd;
+        &quot;kycAddressTier&quot;: 3,&#xd;
+        &quot;currentAddressLocation&quot;: null,&#xd;
+        &quot;gpsManualOverride&quot;: false,&#xd;
+        &quot;isAddressValid&quot;: true,&#xd;
+        &quot;kycName&quot;: null,&#xd;
+        &quot;phoneNumber&quot;: &quot;+917204977026&quot;,&#xd;
+        &quot;dob&quot;: 656533800000,&#xd;
+        &quot;name&quot;: &quot;GOPAL PRASAD&quot;&#xd;
+    },&#xd;
+    &quot;preApprovedOfferInfo&quot;: null,&#xd;
+    &quot;callerApiName&quot;: &quot;checkEligibilityInternal&quot;,&#xd;
+    &quot;chainInfo&quot;: {&#xd;
+        &quot;chainName&quot;: null,&#xd;
+        &quot;productId&quot;: null,&#xd;
+        &quot;scheme&quot;: null,&#xd;
+        &quot;maxInterestRateCeil&quot;: null,&#xd;
+        &quot;procChargeCeil&quot;: null,&#xd;
+        &quot;minLoanAmountFloor&quot;: null,&#xd;
+        &quot;program&quot;: null,&#xd;
+        &quot;honourCategory&quot;: false,&#xd;
+        &quot;partner&quot;: 0,&#xd;
+        &quot;maxLoanAmountCeil&quot;: null,&#xd;
+        &quot;minInterestRateFloor&quot;: null,&#xd;
+        &quot;maxLoanTenureCeil&quot;: null,&#xd;
+        &quot;minLoanTenureFloor&quot;: null&#xd;
+    },&#xd;
+    &quot;employmentInfo&quot;: {&#xd;
+        &quot;businessActivity&quot;: null,&#xd;
+        &quot;employmentVerificationMode&quot;: &quot;NA&quot;,&#xd;
+        &quot;employmentType&quot;: &quot;Salaried&quot;,&#xd;
+        &quot;companyStatus&quot;: null,&#xd;
+        &quot;employerName&quot;: &quot;Moneyview&quot;,&#xd;
+        &quot;employmentVerifiedStatus&quot;: &quot;REQUIRED&quot;,&#xd;
+        &quot;uanNo&quot;: null,&#xd;
+        &quot;employerCategory&quot;: &quot;DEFAULT&quot;,&#xd;
+        &quot;incomeMode&quot;: &quot;Online&quot;&#xd;
+    },&#xd;
+    &quot;currentLoanDTO&quot;: null,&#xd;
+    &quot;repeatUserDTO&quot;: null,&#xd;
+    &quot;loanApplicationInfo&quot;: {&#xd;
+        &quot;lineRevisionType&quot;: &quot;SYSTEM&quot;,&#xd;
+        &quot;creditGraduationApplied&quot;: false,&#xd;
+        &quot;userDataReviewStatus&quot;: &quot;REQ_CREDIT_CHECK&quot;,&#xd;
+        &quot;isMarketing&quot;: false,&#xd;
+        &quot;vehicleAmount&quot;: null,&#xd;
+        &quot;userSegment&quot;: &quot;NO_DATA&quot;,&#xd;
+        &quot;vehicleRegType&quot;: null,&#xd;
+        &quot;isCreditGraduation&quot;: false,&#xd;
+        &quot;applicationStatus&quot;: &quot;CREDIT_CHECK_MANUAL&quot;,&#xd;
+        &quot;isIncomeVerifiedForRiskyTopup&quot;: false,&#xd;
+        &quot;purchaseProcessingFee&quot;: 0.0,&#xd;
+        &quot;loanApplicationId&quot;: &quot;income88model160620615243&quot;,&#xd;
+        &quot;creditGraduationType&quot;: &quot;BANK_STATEMENT&quot;,&#xd;
+        &quot;isLineTransfer&quot;: false,&#xd;
+        &quot;appliedEmi&quot;: 0.0,&#xd;
+        &quot;voucherFlow&quot;: false,&#xd;
+        &quot;loanApplicationNumber&quot;: &quot;184406380560&quot;,&#xd;
+        &quot;appliedRoi&quot;: 0.0,&#xd;
+        &quot;leadId&quot;: null,&#xd;
+        &quot;moratoriumOpted&quot;: false,&#xd;
+        &quot;appName&quot;: &quot;com.whizdm.moneyview.loans&quot;,&#xd;
+        &quot;purchaseSubventionAmount&quot;: 0.0,&#xd;
+        &quot;leadSource&quot;: null,&#xd;
+        &quot;rawProcessingFee&quot;: 0.0,&#xd;
+        &quot;isPerfiosSuccess&quot;: false,&#xd;
+        &quot;lowGrowApplied&quot;: false,&#xd;
+        &quot;isTopupRiskyCustomer&quot;: false,&#xd;
+        &quot;submissionDate&quot;: null,&#xd;
+        &quot;appliedAmount&quot;: 0.0,&#xd;
+        &quot;moratoriumList&quot;: [],&#xd;
+        &quot;loanAmount&quot;: 0.0,&#xd;
+        &quot;perfiosAccountNumber&quot;: null,&#xd;
+        &quot;isTopupBSUploadFlow&quot;: false,&#xd;
+        &quot;isPurchaseLoan&quot;: false,&#xd;
+        &quot;loanTenure&quot;: 0,&#xd;
+        &quot;channelName&quot;: &quot;MVL_APP&quot;&#xd;
+    },&#xd;
+    &quot;cashFlowInfo&quot;: {&#xd;
+        &quot;income&quot;: null,&#xd;
+        &quot;manualIncomeVerification&quot;: false,&#xd;
+        &quot;obligationsToDeduct&quot;: null,&#xd;
+        &quot;latePaymentExists&quot;: true,&#xd;
+        &quot;declaredIncome&quot;: &quot;21000&quot;,&#xd;
+        &quot;obligations&quot;: -1.0,&#xd;
+        &quot;opsCalculatedIncome&quot;: 0.0&#xd;
+    },&#xd;
+    &quot;fraudDetailsInfo&quot;: {&#xd;
+        &quot;duplicatePhoneNumber&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;currPermAddrMatch&quot;: false,&#xd;
+        &quot;dedupPartner&quot;: 0,&#xd;
+        &quot;duplicateDevice&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;riskyProfileTags&quot;: &quot;&quot;,&#xd;
+        &quot;bankAccountMatch&quot;: false,&#xd;
+        &quot;clixDecisionDto&quot;: {&#xd;
+            &quot;reason&quot;: &quot;CLIX APPLICATION NOT FOUND&quot;,&#xd;
+            &quot;status&quot;: &quot;APPROVED&quot;&#xd;
+        },&#xd;
+        &quot;abflpincodeValid&quot;: true,&#xd;
+        &quot;dedup&quot;: &quot;FAILED&quot;,&#xd;
+        &quot;negativeTagDetails&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;ficclLeadAge&quot;: 0,&#xd;
+        &quot;clixBlacklistedPincode&quot;: false,&#xd;
+        &quot;duplicatePan&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;cleanTrackRecordForPC&quot;: &quot;NOT_FOUND&quot;,&#xd;
+        &quot;clixOneLakhPlusLoanAllowed&quot;: false,&#xd;
+        &quot;whitelistedPincode&quot;: &quot;FOUND&quot;,&#xd;
+        &quot;negativeEmployerTags&quot;: &quot;&quot;,&#xd;
+        &quot;dmiRejectReason&quot;: null,&#xd;
+        &quot;ekycStatus&quot;: null&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">dev-services.whizdm.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/unnati/getOffers</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
